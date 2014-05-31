@@ -16,7 +16,7 @@ $args = array(
 	'method' => 'POST',
 	'body'   => array(
 		'room_id'        => 602229,
-		'from'           => 'VIP/master',
+		'from'           => 'WP.com VIP',
 		'message'        => 'Somebody just pushed code to VIP for review',
 		'notify'         => 0,
 		'color'          => 'purple',
@@ -25,6 +25,7 @@ $args = array(
 		'auth_token'     => $api_key
 	)
 );
+
 $resp = wp_remote_post( 'https://api.hipchat.com/v1/rooms/message', $args );
 
 if ( '200' == wp_remote_retrieve_response_code( $resp ) ) {
